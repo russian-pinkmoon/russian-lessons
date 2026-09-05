@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Урок русского для корейцев — Книги</title>
-    <!-- ===== ДЛЯ TELEGRAM MINI APP ===== -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         /* ===== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ===== */
@@ -563,7 +562,6 @@
             font-size: 18px;
             cursor: pointer;
             transition: 0.2s;
-            margin-top: 18px;
             display: inline-block;
         }
         .about-restart-btn:active {
@@ -575,6 +573,25 @@
         }
         .about-restart-btn:hover {
             background: #1F4660;
+        }
+
+        /* Контейнер для двух кнопок на последней странице */
+        .about-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .about-buttons .about-restart-btn {
+            flex: 1;
+            min-width: 120px;
+        }
+        .about-buttons .about-restart-btn:last-child {
+            background: #6A8CA8; /* чуть светлее для второй кнопки */
+        }
+        .about-buttons .about-restart-btn:last-child:hover {
+            background: #5A7A92;
         }
 
         /* ===== АДАПТИВ ===== */
@@ -590,11 +607,11 @@
             .about-avatar { width: 100px; height: 100px; }
             .about-text { font-size: 14px; }
             .about-link { font-size: 14px; padding: 8px 16px; }
+            .about-buttons .about-restart-btn { min-width: 100px; font-size: 15px; padding: 10px 12px; }
         }
     </style>
 </head>
 <body>
-    <!-- ===== ДЛЯ TELEGRAM MINI APP ===== -->
     <script>
         const tg = window.Telegram.WebApp;
         tg.ready();
@@ -695,7 +712,7 @@
         <div class="page" data-page="5">
             <div class="about-container">
                 <img class="about-avatar" 
-                     src="https://i.ibb.co/RTQdJ7ts/IMG-6694.jpg" 
+                     src="https://i.ibb.co/k2qvPMzw/IMG-6694.jpg" 
                      alt="Pinkmoon">
                 <div class="about-text">
     안녕하세요! 핑크문 러시아어입니다! 🌙
@@ -718,7 +735,12 @@
                 <div class="about-text">
     러시아어 공부가 쉽고 즐겁기를 바랍니다! 파이팅! 💪
                 </div>
-                <button class="about-restart-btn" onclick="location.reload()">🔄 다시 시작</button>
+
+                <!-- ДВЕ КНОПКИ: обновить и на главную -->
+                <div class="about-buttons">
+                    <button class="about-restart-btn" onclick="location.reload()">🔄 다시 시작</button>
+                    <button class="about-restart-btn" onclick="window.location.href='index.html'">📚 레슨 목록으로</button>
+                </div>
             </div>
         </div>
     </div>
@@ -755,15 +777,15 @@
         };
 
         // ============================================================
-        //  ДАННЫЕ (слова для изучения) – с реальными картинками
+        //  ДАННЫЕ (слова для изучения) – обновлённые картинки
         // ============================================================
         const words = [
-            { ru: "Откры́ть кни́гу", ko: "책을 펴다", img: "https://i.ibb.co/q34m4jY7/IMG-7035.jpg" },
-            { ru: "Закры́ть кни́гу", ko: "책을 덮다", img: "https://i.ibb.co/QFJM7Gks/IMG-7042.jpg" },
-            { ru: "Чита́ть кни́гу", ko: "책을 읽다", img: "https://i.ibb.co/3ygdMmyP/IMG-7036.jpg" },
-            { ru: "Дочита́ть кни́гу", ko: "책을 다 읽다", img: "https://i.ibb.co/DhCMgjC/IMG-7037.jpg" },
-            { ru: "Рекомендова́ть кни́гу", ko: "책을 추천하다", img: "https://i.ibb.co/cSQkr2w9/IMG-7044.jpg" },
-            { ru: "Дать почита́ть кни́гу", ko: "책을 빌려주다", img: "https://i.ibb.co/xKmQGJnZ/IMG-7045.jpg" }
+            { ru: "Откры́ть кни́гу", ko: "책을 펴다", img: "https://i.ibb.co/wFbpbghB/IMG-7035.jpg" },
+            { ru: "Чита́ть кни́гу", ko: "책을 읽다", img: "https://i.ibb.co/99QgVH9d/IMG-7036.jpg" },
+            { ru: "Дочита́ть кни́гу", ko: "책을 다 읽다", img: "https://i.ibb.co/pczKrkz/IMG-7037.jpg" },
+            { ru: "Закры́ть кни́гу", ko: "책을 덮다", img: "https://i.ibb.co/1f0TYxMH/IMG-7042.jpg" },
+            { ru: "Рекомендова́ть кни́гу", ko: "책을 추천하다", img: "https://i.ibb.co/gLJmRtd8/IMG-7044.jpg" },
+            { ru: "Дать почита́ть кни́гу", ko: "책을 빌려주다", img: "https://i.ibb.co/p6WpZJHq/IMG-7045.jpg" }
         ];
 
         // ------------------------------------------------------------
@@ -871,7 +893,6 @@
             const container = document.getElementById('memoryCard');
             const buttons = document.getElementById('memoryButtons');
             if (remain.length === 0) {
-                // Завершено – убираем обводку и фон
                 container.innerHTML = `<div style="padding:20px; font-size:20px; color:#2C5A7A;">${uiText.step1_allDone}</div>`;
                 container.classList.add('finished');
                 document.getElementById('nextFromMemory').disabled = false;
@@ -879,7 +900,6 @@
                 document.activeElement?.blur();
                 return;
             }
-            // Если не завершено – убираем класс finished
             container.classList.remove('finished');
             buttons.classList.remove('hidden');
             const next = remain[0];
