@@ -63,12 +63,12 @@
         .lesson-card:active {
             transform: scale(0.98);
         }
+        /* Убираем скругление у картинки */
         .lesson-card img {
             width: 100%;
             height: auto;
-            border-radius: 16px;
-            background: #E8EDF2;
             display: block;
+            /* border-radius убран */ 
         }
         .lesson-title {
             margin-top: 12px;
@@ -85,6 +85,7 @@
     </style>
 </head>
 <body>
+    <!-- Инициализация Telegram Mini App -->
     <script>
         const tg = window.Telegram.WebApp;
         tg.ready();
@@ -97,7 +98,7 @@
 
         <a href="lesson-books.html" class="lesson-card">
             <img 
-                src="https://i.ibb.co/VYtv6dd0/2026-08-18-22-56-50.png" 
+                src="https://i.ibb.co/F4KBp99k/2026-08-18-22-56-50.png" 
                 alt="Превью урока 'Книги'"
                 loading="lazy"
             >
