@@ -1,154 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>러시아어 어휘 배우기</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YNY62W79W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4YNY62W79W');
-</script>    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>러시아어 어휘 배우기</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            background: #E8EDF2;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .container {
-            max-width: 700px;
-            width: 100%;
-            background: #FFFFFF;
-            border-radius: 32px;
-            box-shadow: 0 20px 60px rgba(34, 56, 75, 0.10);
-            padding: 24px 20px 32px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #22384B;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
-        }
-        .sub {
-            font-size: 16px;
-            color: #5A7A92;
-            margin-bottom: 28px;
-            border-bottom: 2px solid #D0D9E0;
-            padding-bottom: 16px;
-        }
-
-        /* Сетка для двух колонок */
-        .lessons-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 8px;
-        }
-
-        .lesson-card {
-            display: block;
-            background: #FFFFFF;
-            border: 2px solid #D0D9E0;
-            border-radius: 0;           /* Убрали скругление углов */
-            padding: 0;                 /* Убрали внутренние отступы — картинка займёт всю ширину */
-            text-decoration: none;
-            color: inherit;
-            transition: box-shadow 0.25s, transform 0.15s;
-            overflow: hidden;           /* Чтобы содержимое не вылезало за рамку */
-        }
-        .lesson-card:hover {
-            box-shadow: 0 8px 24px rgba(34, 56, 75, 0.12);
-            transform: translateY(-2px);
-        }
-        .lesson-card:active {
-            transform: scale(0.98);
-        }
-
-        .lesson-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            /* border-radius убран — углы прямые */
-        }
-
-        .lesson-title {
-            padding: 8px 10px 10px;    /* Небольшие отступы для текста, чтобы не прилипал к краям */
-            font-size: 20px;
-            font-weight: 600;
-            color: #22384B;
-            letter-spacing: 0.2px;
-            background: #FFFFFF;        /* Белый фон, чтобы перекрыть возможный просвет */
-            text-align: center;
-        }
-
-        @media (max-width: 500px) {
-            .container { padding: 20px 16px; }
-            h1 { font-size: 24px; }
-            .lesson-title { font-size: 18px; }
-            .lessons-grid {
-                gap: 10px;
-            }
-        }
-        @media (max-width: 350px) {
-            .lessons-grid {
-                gap: 8px;
-            }
-            .lesson-title {
-                font-size: 16px;
-                padding: 6px 8px 8px;
-            }
-        }
-    </style>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-4YNY62W79W');</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:#E8EDF2;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px;-webkit-tap-highlight-color:transparent}
+.container{max-width:700px;width:100%;background:#fff;border-radius:32px;box-shadow:0 20px 60px rgba(34,56,75,.1);padding:24px 20px 32px;text-align:center}
+h1{font-size:28px;font-weight:700;color:#22384B;margin-bottom:6px;letter-spacing:.3px}
+.sub{font-size:16px;color:#5A7A92;margin-bottom:28px;border-bottom:2px solid #D0D9E0;padding-bottom:16px}
+.lessons-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.lesson-card{display:block;background:#fff;border:2px solid #D0D9E0;border-radius:0;padding:0;text-decoration:none;color:inherit;transition:box-shadow .25s,transform .15s;overflow:hidden}
+.lesson-card:hover{box-shadow:0 8px 24px rgba(34,56,75,.12);transform:translateY(-2px)}
+.lesson-card:active{transform:scale(.98)}
+.lesson-card img{width:100%;height:auto;display:block}
+.lesson-title{padding:8px 10px 10px;font-size:20px;font-weight:600;color:#22384B;letter-spacing:.2px;background:#fff;text-align:center}
+@media(max-width:500px){.container{padding:20px 16px}h1{font-size:24px}.lesson-title{font-size:18px}.lessons-grid{gap:10px}}
+@media(max-width:350px){.lessons-grid{gap:8px}.lesson-title{font-size:16px;padding:6px 8px 8px}}
+</style>
 </head>
 <body>
-    <!-- Инициализация Telegram Mini App -->
-    <script>
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-        tg.expand();
-    </script>
-
-    <div class="container">
-        <h1>러시아어 어휘 배우기</h1>
-        <div class="sub">클릭해서 수업을 시작하세요</div>
-
-        <div class="lessons-grid">
-            <!-- Книги -->
-            <a href="lesson-books.html" class="lesson-card">
-                <img 
-                    src="https://i.ibb.co/F4KBp99k/2026-08-18-22-56-50.png" 
-                    alt="Превью урока 'Книги'"
-                    loading="lazy"
-                >
-                <div class="lesson-title">📖 책 관련 어휘</div>
-            </a>
-
-            <!-- Телефон -->
-            <a href="lesson-phone.html" class="lesson-card">
-                <img 
-                    src="https://i.ibb.co/pBBmsPhZ/image.png" 
-                    alt="Превью урока 'Телефон'"
-                    loading="lazy"
-                >
-                <div class="lesson-title">📱 핸드폰 관련 어휘</div>
-            </a>
-        </div>
-    </div>
+<script>const tg=window.Telegram.WebApp;tg.ready();tg.expand();</script>
+<div class="container">
+<h1>러시아어 어휘 배우기</h1>
+<div class="sub">클릭해서 수업을 시작하세요</div>
+<div class="lessons-grid">
+<a href="lesson-books.html" class="lesson-card">
+<img src="https://i.ibb.co/F4KBp99k/2026-08-18-22-56-50.png" alt="Книги" loading="lazy">
+<div class="lesson-title">📖 책 관련 어휘</div>
+</a>
+<a href="lesson-phone.html" class="lesson-card">
+<img src="https://i.ibb.co/pBBmsPhZ/image.png" alt="Телефон" loading="lazy">
+<div class="lesson-title">📱 핸드폰 관련 어휘</div>
+</a>
+</div>
+</div>
 </body>
 </html>
