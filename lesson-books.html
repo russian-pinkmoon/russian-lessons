@@ -9,7 +9,7 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-4YNY62W79W');</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:#E8EDF2;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:8px;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:#E8EDF2;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:8px 8px 24px;-webkit-tap-highlight-color:transparent}
 .container{max-width:700px;width:100%;padding:0;text-align:center}
 .header{padding:12px 0 6px;border-bottom:2px solid #D0D9E0;margin-bottom:10px}
 h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:2px;letter-spacing:.3px}
@@ -35,22 +35,22 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 .card-memory .hint{font-size:14px;color:#5A7A92;margin-top:6px}
 .card-memory.finished{border:none;background:transparent;cursor:default;padding:0}
 .card-memory.finished:hover{background:transparent}
-.btn,.btn-remember,.option-btn,.about-restart-btn,.nav-bar .btn{-webkit-tap-highlight-color:transparent;touch-action:manipulation;outline:none;box-shadow:none;user-select:none;transition:transform .15s,background .15s}
-.btn{background:#D0D9E0;border:none;padding:10px 20px;border-radius:40px;font-size:16px;font-weight:500;cursor:pointer;color:#22384B;min-width:80px}
+.btn,.btn-remember,.option-btn,.about-restart-btn,.nav-bar .btn{-webkit-tap-highlight-color:transparent;touch-action:manipulation;outline:none;box-shadow:none;user-select:none;transition:transform .15s,background .15s;white-space:nowrap}
+.btn{background:#D0D9E0;border:none;padding:8px 16px;border-radius:40px;font-size:17px;font-weight:500;cursor:pointer;color:#22384B;min-width:70px}
 .btn:active{transform:scale(.96)}
 .btn-primary,.btn-success{background:#2C5A7A;color:#fff}
 .btn-primary:hover,.btn-success:hover{background:#1F4660}
 .btn-danger{background:#D0D9E0;color:#22384B}
 .btn-danger:hover{background:#BEC8D2}
 .btn:disabled,.btn-remember:disabled{opacity:.4;pointer-events:none;filter:grayscale(.5)}
-.btn-remember{background:#2C5A7A;color:#fff;padding:10px 28px;font-size:18px;border-radius:40px;border:none;cursor:pointer;display:inline-block;margin:4px 0 10px}
+.btn-remember{background:#2C5A7A;color:#fff;padding:8px 24px;font-size:19px;border-radius:40px;border:none;cursor:pointer;display:inline-block;margin:4px 0 10px}
 .btn-remember:active{transform:scale(.96)}
 .btn-remember:hover{background:#1F4660}
 .memory-buttons{display:flex;gap:12px;justify-content:center;margin-top:10px;flex-wrap:wrap;transition:opacity .3s}
 .memory-buttons.hidden{display:none}
 .select-card,.test-card{background:#fff;border-radius:14px;padding:16px 12px;text-align:center;border:2px solid #D0D9E0;margin:8px 0 12px}
 .select-options,.test-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.option-btn{background:#fff;border:2px solid #D0D9E0;border-radius:14px;padding:10px 6px;font-size:15px;cursor:pointer;color:#22384B}
+.option-btn{background:#fff;border:2px solid #D0D9E0;border-radius:14px;padding:8px 4px;font-size:16px;cursor:pointer;color:#22384B}
 .option-btn:active{transform:scale(.96)}
 .option-btn:hover{background:#F5F8FA}
 .option-btn.correct{border-color:#2C5A7A;background:#E8EDF2}
@@ -66,7 +66,7 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 .progress-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#22384B;background:#E8EDF2;padding:6px 14px;border-radius:40px;margin:6px 0 10px;flex-wrap:wrap;gap:4px 10px}
 .progress-row .highlight{color:#2C5A7A;font-weight:600}
 .nav-bar{display:flex;justify-content:space-between;gap:6px;margin-top:16px;padding-top:12px;border-top:2px solid #D0D9E0;flex-wrap:wrap}
-.nav-bar .btn{flex:1;min-width:70px;padding:8px 10px;font-size:14px;text-align:center}
+.nav-bar .btn{flex:1;min-width:60px;padding:6px 8px;font-size:16px;text-align:center}
 #navBack0{flex:2;white-space:nowrap}
 .nav-bar .btn:first-child{background:#D0D9E0;color:#22384B}
 .nav-bar .btn:first-child:hover{background:#BEC8D2}
@@ -75,23 +75,25 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 .nav-bar .btn:last-child{background:#2C5A7A;color:#fff}
 .nav-bar .btn:last-child:disabled{background:#D0D9E0;color:#7A8A9A}
 .nav-bar .btn:last-child:not(:disabled):hover{background:#1F4660}
-.nav-bar .btn-center-placeholder{flex:1;min-width:70px;visibility:hidden}
+.nav-bar .btn-center-placeholder{flex:1;min-width:60px;visibility:hidden}
 .about-container{text-align:center;padding:8px 0 4px}
 .about-avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid #2C5A7A;box-shadow:0 4px 12px rgba(44,90,122,.2);margin-bottom:12px}
 .about-text{font-size:15px;line-height:1.6;color:#3A5A72;max-width:460px;margin:0 auto 10px;white-space:pre-line;text-align:left;padding:0 4px}
 .about-text:last-of-type{margin-top:12px;margin-bottom:0}
 .about-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:12px 0}
-.about-link{background:#E8EDF2;padding:8px 18px;border-radius:40px;text-decoration:none;color:#22384B;font-weight:500;font-size:15px;transition:.2s;display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;-webkit-tap-highlight-color:transparent}
-.about-link:hover{background:#D0D9E0;border-color:#2C5A7A}
+.about-link{background:#BEC8D2;padding:8px 18px;border-radius:40px;text-decoration:none;color:#22384B;font-weight:500;font-size:15px;transition:.2s;display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;-webkit-tap-highlight-color:transparent}
+.about-link:hover{background:#A8B4C0;border-color:#2C5A7A}
 .about-link i{font-size:18px}
-.about-restart-btn{background:#2C5A7A;color:#fff;border:none;padding:10px 28px;border-radius:40px;font-size:17px;cursor:pointer;transition:.2s;display:inline-block}
+.about-restart-btn{background:#2C5A7A;color:#fff;border:none;padding:8px 20px;border-radius:40px;font-size:18px;cursor:pointer;transition:.2s;display:inline-block}
 .about-restart-btn:active{transform:scale(.96)}
 .about-restart-btn:hover{background:#1F4660}
 .about-buttons{display:flex;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}
-.about-buttons .about-restart-btn{flex:1;min-width:100px}
+.about-buttons .about-restart-btn{flex:1;min-width:80px;font-size:17px;padding:8px 12px}
 .about-buttons .about-restart-btn:last-child{background:#6A8CA8}
 .about-buttons .about-restart-btn:last-child:hover{background:#5A7A92}
-@media(max-width:500px){body{padding:6px}.header{padding:10px 0 4px;margin-bottom:8px}h1{font-size:20px}.subtitle{font-size:11px}.card-grid{grid-template-columns:repeat(2,1fr);gap:8px}.grid-3x4{gap:4px}.grid-cell{font-size:12px;padding:8px 2px;min-height:42px}.test-options,.select-options{grid-template-columns:1fr 1fr;gap:6px}.btn{font-size:14px;padding:8px 14px;min-width:60px}.nav-bar .btn{font-size:12px;padding:6px 4px}.about-avatar{width:80px;height:80px}.about-text{font-size:14px}.about-link{font-size:14px;padding:6px 14px}.about-buttons .about-restart-btn{min-width:80px;font-size:14px;padding:8px 10px}}
+.about-buttons .about-restart-btn:first-child{background:#D0D9E0;color:#22384B}
+.about-buttons .about-restart-btn:first-child:hover{background:#BEC8D2}
+@media(max-width:500px){body{padding:6px 6px 20px}.header{padding:10px 0 4px;margin-bottom:8px}h1{font-size:20px}.subtitle{font-size:11px}.card-grid{grid-template-columns:repeat(2,1fr);gap:8px}.grid-3x4{gap:4px}.grid-cell{font-size:12px;padding:8px 2px;min-height:42px}.test-options,.select-options{grid-template-columns:1fr 1fr;gap:6px}.btn{font-size:15px;padding:6px 12px;min-width:50px}.nav-bar .btn{font-size:14px;padding:4px 6px}.about-avatar{width:80px;height:80px}.about-text{font-size:14px}.about-link{font-size:14px;padding:6px 14px}.about-buttons .about-restart-btn{min-width:60px;font-size:15px;padding:6px 8px}}
 </style>
 </head>
 <body>
@@ -149,7 +151,11 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
   • 텔레그램: 무료 PDF과 인터랙티브 HTML 수업</div>
 <div class="about-links"><a class="about-link" href="https://youtube.com/@russian_pinkmoon" target="_blank"><span>📺</span> YouTube</a><a class="about-link" href="https://t.me/russian_pinkmoon" target="_blank"><span>💬</span> Telegram</a></div>
 <div class="about-text">러시아어 공부가 쉽고 즐겁기를 바랍니다! 파이팅! 💪</div>
-<div class="about-buttons"><button class="about-restart-btn" onclick="location.reload()">🔄 다시 시작</button><button class="about-restart-btn" onclick="window.location.href='index.html'">📚 레슨 목록으로</button></div>
+<div class="about-buttons">
+<button class="about-restart-btn" onclick="goToPage(4)">⬅️ 이전</button>
+<button class="about-restart-btn" onclick="location.reload()">🔄 다시 시작</button>
+<button class="about-restart-btn" onclick="window.location.href='index.html'">📚 레슨 목록으로</button>
+</div>
 </div>
 </div>
 </div>
