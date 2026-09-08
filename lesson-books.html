@@ -66,6 +66,7 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 .progress-row .highlight{color:#2C5A7A;font-weight:600}
 .nav-bar{display:flex;justify-content:space-between;gap:8px;margin-top:22px;padding-top:14px;border-top:2px solid #D0D9E0;flex-wrap:wrap}
 .nav-bar .btn{flex:1;min-width:80px;padding:10px 12px;font-size:15px;text-align:center}
+#navBack0{flex:2;white-space:nowrap}
 .nav-bar .btn:first-child{background:#D0D9E0;color:#22384B}
 .nav-bar .btn:first-child:hover{background:#BEC8D2}
 .nav-bar .btn:nth-child(2){background:#E8EDF2;color:#22384B}
@@ -170,11 +171,10 @@ document.querySelectorAll('[id^="navBack"]').forEach(el=>el.textContent=uiText.n
 document.querySelectorAll('[id^="navRepeat"]').forEach(el=>el.textContent=uiText.nav_repeat);
 document.querySelectorAll('[id^="nextFrom"]').forEach(el=>el.textContent=uiText.nav_next);
 document.getElementById('nextFromTest').textContent=uiText.nav_finish;
-// Настройка кнопки на первой странице (возврат на главную)
 const back0=document.getElementById('navBack0');
 back0.textContent='⬅️ 레슨 목록으로';
-back0.disabled=false;
-back0.onclick=function(){window.location.href='index.html';};
+back0.disabled=!1;
+back0.onclick=function(){window.location.href='index.html'};
 renderMemoryGrid();initMemory();initSelect();initGrid();initTest();updateDots();
 document.getElementById('btnRemembered').addEventListener('click',function(){this.disabled=!0;this.textContent=uiText.step0_rememberDone;document.getElementById('nextFromPage0').disabled=!1;this.blur()});
 }
