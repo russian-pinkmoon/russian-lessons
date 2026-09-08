@@ -9,63 +9,64 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-4YNY62W79W');</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:#E8EDF2;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px;-webkit-tap-highlight-color:transparent}
-.container{max-width:700px;width:100%;background:#fff;border-radius:32px;box-shadow:0 20px 60px rgba(34,56,75,.1);padding:24px 20px 20px}
+body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:#E8EDF2;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:8px;-webkit-tap-highlight-color:transparent}
+.container{max-width:700px;width:100%;padding:0;text-align:center}
+.header{padding:12px 0 6px;border-bottom:2px solid #D0D9E0;margin-bottom:10px}
 h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:2px;letter-spacing:.3px}
-.subtitle{text-align:center;color:#7A8A9A;font-size:12px;margin-bottom:20px;border-bottom:1px solid #D0D9E0;padding-bottom:10px}
-.step-indicator{display:flex;justify-content:space-between;margin-bottom:20px;gap:6px}
+.subtitle{text-align:center;color:#7A8A9A;font-size:12px;margin-top:2px}
+.step-indicator{display:flex;justify-content:space-between;margin-bottom:14px;gap:6px;padding:0 4px}
 .step-dot{flex:1;height:6px;border-radius:4px;background:#D0D9E0;transition:background .3s}
-.step-dot.active{background:#2C5A7A}
+.step-dot.active{background:#D95C5C}
 .step-dot.done{background:#6A8CA8}
 .page{display:none;animation:fade .25s ease}
 .page.active{display:block}
 @keyframes fade{0%{opacity:.4;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:16px 0 20px}
-.card{background:#fff;border-radius:20px;padding:12px 8px 10px;text-align:center;box-shadow:0 4px 12px rgba(34,56,75,.06);border:1px solid #D0D9E0}
-.card-img{width:100%;aspect-ratio:1/1;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0 16px}
+.card{background:#fff;border-radius:14px;padding:10px 6px 8px;text-align:center;box-shadow:0 2px 8px rgba(34,56,75,.06);border:1px solid #D0D9E0}
+.card-img{width:100%;aspect-ratio:1/1;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:6px;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;border-radius:12px}
 .card-ru{font-weight:600;color:#22384B;font-size:16px}
 .card-ko{font-size:15px;color:#5A7A92;margin-top:2px}
-.card-memory{background:#fff;border-radius:24px;padding:20px 16px 18px;text-align:center;border:2px solid #D0D9E0;margin:10px 0 16px;cursor:pointer;transition:.2s;user-select:none}
+.card-memory{background:#fff;border-radius:14px;padding:16px 12px 14px;text-align:center;border:2px solid #D0D9E0;margin:8px 0 12px;cursor:pointer;transition:.2s;user-select:none}
 .card-memory:hover{background:#F5F8FA}
-.card-memory .card-img{max-width:200px;margin:0 auto 12px}
+.card-memory .card-img{max-width:180px;margin:0 auto 10px}
 .card-memory .memory-ru{font-size:20px;font-weight:600;color:#22384B;margin-top:10px;padding:8px;background:#E8EDF2;border-radius:12px;display:none}
 .card-memory .memory-ru.show{display:block}
-.card-memory .hint{font-size:14px;color:#5A7A92;margin-top:8px}
+.card-memory .hint{font-size:14px;color:#5A7A92;margin-top:6px}
 .card-memory.finished{border:none;background:transparent;cursor:default;padding:0}
 .card-memory.finished:hover{background:transparent}
 .btn,.btn-remember,.option-btn,.about-restart-btn,.nav-bar .btn{-webkit-tap-highlight-color:transparent;touch-action:manipulation;outline:none;box-shadow:none;user-select:none;transition:transform .15s,background .15s}
-.btn{background:#D0D9E0;border:none;padding:12px 28px;border-radius:40px;font-size:17px;font-weight:500;cursor:pointer;color:#22384B;min-width:100px}
+.btn{background:#D0D9E0;border:none;padding:10px 20px;border-radius:40px;font-size:16px;font-weight:500;cursor:pointer;color:#22384B;min-width:80px}
 .btn:active{transform:scale(.96)}
 .btn-primary,.btn-success{background:#2C5A7A;color:#fff}
 .btn-primary:hover,.btn-success:hover{background:#1F4660}
 .btn-danger{background:#D0D9E0;color:#22384B}
 .btn-danger:hover{background:#BEC8D2}
 .btn:disabled,.btn-remember:disabled{opacity:.4;pointer-events:none;filter:grayscale(.5)}
-.btn-remember{background:#2C5A7A;color:#fff;padding:12px 32px;font-size:18px;border-radius:40px;border:none;cursor:pointer;display:inline-block;margin:6px 0 14px}
+.btn-remember{background:#2C5A7A;color:#fff;padding:10px 28px;font-size:18px;border-radius:40px;border:none;cursor:pointer;display:inline-block;margin:4px 0 10px}
 .btn-remember:active{transform:scale(.96)}
 .btn-remember:hover{background:#1F4660}
-.memory-buttons{display:flex;gap:16px;justify-content:center;margin-top:14px;flex-wrap:wrap;transition:opacity .3s}
+.memory-buttons{display:flex;gap:12px;justify-content:center;margin-top:10px;flex-wrap:wrap;transition:opacity .3s}
 .memory-buttons.hidden{display:none}
-.select-card,.test-card{background:#fff;border-radius:24px;padding:20px 16px;text-align:center;border:2px solid #D0D9E0;margin:10px 0 16px}
-.select-options,.test-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.option-btn{background:#fff;border:2px solid #D0D9E0;border-radius:16px;padding:12px 8px;font-size:15px;cursor:pointer;color:#22384B}
+.select-card,.test-card{background:#fff;border-radius:14px;padding:16px 12px;text-align:center;border:2px solid #D0D9E0;margin:8px 0 12px}
+.select-options,.test-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.option-btn{background:#fff;border:2px solid #D0D9E0;border-radius:14px;padding:10px 6px;font-size:15px;cursor:pointer;color:#22384B}
 .option-btn:active{transform:scale(.96)}
 .option-btn:hover{background:#F5F8FA}
 .option-btn.correct{border-color:#2C5A7A;background:#E8EDF2}
 .option-btn.wrong{border-color:#D95C5C!important;background:#FFEAEA!important;animation:shake .3s ease-in-out}
 .option-btn:disabled{cursor:default;opacity:.8}
-.grid-3x4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 20px}
-.grid-cell{background:#fff;border:2px solid #D0D9E0;border-radius:16px;padding:14px 6px;text-align:center;font-size:15px;cursor:pointer;transition:.15s;user-select:none;min-height:60px;display:flex;align-items:center;justify-content:center;word-break:break-word;color:#22384B}
+.grid-3x4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0 16px}
+.grid-cell{background:#fff;border:2px solid #D0D9E0;border-radius:12px;padding:12px 4px;text-align:center;font-size:14px;cursor:pointer;transition:.15s;user-select:none;min-height:50px;display:flex;align-items:center;justify-content:center;word-break:break-word;color:#22384B}
 .grid-cell.selected{border-color:#2C5A7A;background:#F5F8FA;box-shadow:0 0 0 3px rgba(44,90,122,.2)}
 .grid-cell.matched{border-color:#6A8CA8;background:#E8EDF2;pointer-events:none;opacity:.7}
 .grid-cell.wrong{border-color:#D95C5C!important;background:#FFEAEA!important;animation:shake .3s ease-in-out}
-@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-4px)}100%{transform:translateX(0)}}
-.test-card .card-img{max-width:180px;margin:0 auto 12px}
-.progress-row{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#22384B;background:#E8EDF2;padding:8px 16px;border-radius:40px;margin:8px 0 12px;flex-wrap:wrap;gap:6px 12px}
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}100%{transform:translateX(0)}}
+.test-card .card-img{max-width:160px;margin:0 auto 10px}
+.progress-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#22384B;background:#E8EDF2;padding:6px 14px;border-radius:40px;margin:6px 0 10px;flex-wrap:wrap;gap:4px 10px}
 .progress-row .highlight{color:#2C5A7A;font-weight:600}
-.nav-bar{display:flex;justify-content:space-between;gap:8px;margin-top:22px;padding-top:14px;border-top:2px solid #D0D9E0;flex-wrap:wrap}
-.nav-bar .btn{flex:1;min-width:80px;padding:10px 12px;font-size:15px;text-align:center}
+.nav-bar{display:flex;justify-content:space-between;gap:6px;margin-top:16px;padding-top:12px;border-top:2px solid #D0D9E0;flex-wrap:wrap}
+.nav-bar .btn{flex:1;min-width:70px;padding:8px 10px;font-size:14px;text-align:center}
 #navBack0{flex:2;white-space:nowrap}
 .nav-bar .btn:first-child{background:#D0D9E0;color:#22384B}
 .nav-bar .btn:first-child:hover{background:#BEC8D2}
@@ -74,30 +75,32 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 .nav-bar .btn:last-child{background:#2C5A7A;color:#fff}
 .nav-bar .btn:last-child:disabled{background:#D0D9E0;color:#7A8A9A}
 .nav-bar .btn:last-child:not(:disabled):hover{background:#1F4660}
-.nav-bar .btn-center-placeholder{flex:1;min-width:80px;visibility:hidden}
-.about-container{text-align:center;padding:10px 0 6px}
-.about-avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid #2C5A7A;box-shadow:0 4px 12px rgba(44,90,122,.2);margin-bottom:16px}
-.about-text{font-size:15px;line-height:1.7;color:#3A5A72;max-width:480px;margin:0 auto 12px;white-space:pre-line;text-align:left;padding:0 8px}
-.about-text:last-of-type{margin-top:16px;margin-bottom:0}
-.about-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:16px 0}
-.about-link{background:#E8EDF2;padding:10px 22px;border-radius:40px;text-decoration:none;color:#22384B;font-weight:500;font-size:16px;transition:.2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;-webkit-tap-highlight-color:transparent}
+.nav-bar .btn-center-placeholder{flex:1;min-width:70px;visibility:hidden}
+.about-container{text-align:center;padding:8px 0 4px}
+.about-avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid #2C5A7A;box-shadow:0 4px 12px rgba(44,90,122,.2);margin-bottom:12px}
+.about-text{font-size:15px;line-height:1.6;color:#3A5A72;max-width:460px;margin:0 auto 10px;white-space:pre-line;text-align:left;padding:0 4px}
+.about-text:last-of-type{margin-top:12px;margin-bottom:0}
+.about-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:12px 0}
+.about-link{background:#E8EDF2;padding:8px 18px;border-radius:40px;text-decoration:none;color:#22384B;font-weight:500;font-size:15px;transition:.2s;display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;-webkit-tap-highlight-color:transparent}
 .about-link:hover{background:#D0D9E0;border-color:#2C5A7A}
-.about-link i{font-size:20px}
-.about-restart-btn{background:#2C5A7A;color:#fff;border:none;padding:12px 32px;border-radius:40px;font-size:18px;cursor:pointer;transition:.2s;display:inline-block}
+.about-link i{font-size:18px}
+.about-restart-btn{background:#2C5A7A;color:#fff;border:none;padding:10px 28px;border-radius:40px;font-size:17px;cursor:pointer;transition:.2s;display:inline-block}
 .about-restart-btn:active{transform:scale(.96)}
 .about-restart-btn:hover{background:#1F4660}
-.about-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:18px;flex-wrap:wrap}
-.about-buttons .about-restart-btn{flex:1;min-width:120px}
+.about-buttons{display:flex;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}
+.about-buttons .about-restart-btn{flex:1;min-width:100px}
 .about-buttons .about-restart-btn:last-child{background:#6A8CA8}
 .about-buttons .about-restart-btn:last-child:hover{background:#5A7A92}
-@media(max-width:500px){.container{padding:16px 12px}.card-grid{grid-template-columns:repeat(2,1fr);gap:10px}.grid-3x4{gap:6px}.grid-cell{font-size:13px;padding:10px 4px;min-height:50px}.test-options,.select-options{grid-template-columns:1fr 1fr;gap:8px}.btn{font-size:15px;padding:10px 18px;min-width:70px}.nav-bar .btn{font-size:13px;padding:8px 6px}.about-avatar{width:100px;height:100px}.about-text{font-size:14px}.about-link{font-size:14px;padding:8px 16px}.about-buttons .about-restart-btn{min-width:100px;font-size:15px;padding:10px 12px}}
+@media(max-width:500px){body{padding:6px}.header{padding:10px 0 4px;margin-bottom:8px}h1{font-size:20px}.subtitle{font-size:11px}.card-grid{grid-template-columns:repeat(2,1fr);gap:8px}.grid-3x4{gap:4px}.grid-cell{font-size:12px;padding:8px 2px;min-height:42px}.test-options,.select-options{grid-template-columns:1fr 1fr;gap:6px}.btn{font-size:14px;padding:8px 14px;min-width:60px}.nav-bar .btn{font-size:12px;padding:6px 4px}.about-avatar{width:80px;height:80px}.about-text{font-size:14px}.about-link{font-size:14px;padding:6px 14px}.about-buttons .about-restart-btn{min-width:80px;font-size:14px;padding:8px 10px}}
 </style>
 </head>
 <body>
 <script>const tg=window.Telegram.WebApp;tg.ready();tg.expand();</script>
 <div class="container" id="app">
+<div class="header">
 <h1 id="mainTitle"></h1>
 <div class="subtitle" id="mainSubtitle"></div>
+</div>
 <div class="step-indicator" id="stepDots">
 <div class="step-dot active" data-step="0"></div>
 <div class="step-dot" data-step="1"></div>
@@ -107,7 +110,7 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 <div class="step-dot" data-step="5"></div>
 </div>
 <div class="page active" data-page="0">
-<p id="step0Desc" style="text-align:center;color:#5A7A92;margin-bottom:6px;"></p>
+<p id="step0Desc" style="text-align:center;color:#5A7A92;margin-bottom:4px;"></p>
 <div class="card-grid" id="memoryGrid"></div>
 <div style="text-align:center;"><button class="btn-remember" id="btnRemembered"></button></div>
 <div class="nav-bar"><button class="btn" id="navBack0"></button><span class="btn-center-placeholder"></span><button class="btn" id="nextFromPage0" disabled onclick="goToPage(1)"></button></div>
@@ -119,19 +122,19 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 <div class="nav-bar"><button class="btn" onclick="goToPage(0)" id="navBack1"></button><button class="btn" onclick="resetMemory()" id="navRepeat1"></button><button class="btn" id="nextFromMemory" disabled onclick="goToPage(2)"></button></div>
 </div>
 <div class="page" data-page="2">
-<p id="step2Desc" style="text-align:center;color:#5A7A92;margin-bottom:6px;"></p>
+<p id="step2Desc" style="text-align:center;color:#5A7A92;margin-bottom:4px;"></p>
 <div class="progress-row"><span class="progress-text" id="selectProgressText">답변 완료: 0 / 6</span></div>
 <div id="selectContainer"></div>
 <div class="nav-bar"><button class="btn" onclick="goToPage(1)" id="navBack2"></button><button class="btn" onclick="resetSelect()" id="navRepeat2"></button><button class="btn" id="nextFromSelect" disabled onclick="goToPage(3)"></button></div>
 </div>
 <div class="page" data-page="3">
-<p id="step3Desc" style="text-align:center;color:#5A7A92;margin-bottom:6px;"></p>
+<p id="step3Desc" style="text-align:center;color:#5A7A92;margin-bottom:4px;"></p>
 <div class="progress-row"><span class="progress-text" id="gridProgressText">찾은 짝: 0 / 6</span></div>
 <div id="gridContainer"><div class="grid-3x4" id="gridTable"></div></div>
 <div class="nav-bar"><button class="btn" onclick="goToPage(2)" id="navBack3"></button><button class="btn" onclick="resetGrid()" id="navRepeat3"></button><button class="btn" id="nextFromGrid" disabled onclick="goToPage(4)"></button></div>
 </div>
 <div class="page" data-page="4">
-<p id="step4Desc" style="text-align:center;color:#5A7A92;margin-bottom:6px;"></p>
+<p id="step4Desc" style="text-align:center;color:#5A7A92;margin-bottom:4px;"></p>
 <div class="progress-row"><span class="progress-text" id="testProgressText">답변 완료: 0 / 6</span></div>
 <div id="testContainer"></div>
 <div class="nav-bar"><button class="btn" onclick="goToPage(3)" id="navBack4"></button><button class="btn" onclick="resetTest()" id="navRepeat4"></button><button class="btn" id="nextFromTest" disabled onclick="finishLesson()"></button></div>
@@ -139,7 +142,11 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 <div class="page" data-page="5">
 <div class="about-container">
 <img class="about-avatar" src="https://i.ibb.co/k2qvPMzw/IMG-6694.jpg" alt="Pinkmoon">
-<div class="about-text">안녕하세요! 핑크문 러시아어입니다! 🌙\n\n이 수업이 러시아어 공부에 조금이나마 도움이 되었길 바랍니다!\n\n더 많은 유용한 자료는 제 SNS에서 찾을 수 있어요:\n• 유튜브: 러시아 문화, 러시아 생활, 러시아어 수업\n• 텔레그램: 무료 PDF과 인터랙티브 HTML 수업</div>
+<div class="about-text">안녕하세요! 핑크문 러시아어입니다! 🌙
+  이 수업이 러시아어 공부에 조금이나마 도움이 되었길 바랍니다!
+  더 많은 유용한 자료는 제 SNS에서 찾을 수 있어요:
+  • 유튜브: 러시아 문화, 러시아 생활, 러시아어 수업
+  • 텔레그램: 무료 PDF과 인터랙티브 HTML 수업</div>
 <div class="about-links"><a class="about-link" href="https://youtube.com/@russian_pinkmoon" target="_blank"><span>📺</span> YouTube</a><a class="about-link" href="https://t.me/russian_pinkmoon" target="_blank"><span>💬</span> Telegram</a></div>
 <div class="about-text">러시아어 공부가 쉽고 즐겁기를 바랍니다! 파이팅! 💪</div>
 <div class="about-buttons"><button class="about-restart-btn" onclick="location.reload()">🔄 다시 시작</button><button class="about-restart-btn" onclick="window.location.href='index.html'">📚 레슨 목록으로</button></div>
@@ -181,20 +188,20 @@ document.getElementById('btnRemembered').addEventListener('click',function(){thi
 function renderMemoryGrid(){const g=document.getElementById('memoryGrid');g.innerHTML='';words.forEach(w=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<div class="card-img"><img src="${w.img}" alt="${w.ru}" loading="lazy"></div><div class="card-ru">${w.ru}</div><div class="card-ko">${w.ko}</div>`;g.appendChild(d)})}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function initMemory(){memoryPool=words.map((w,i)=>({word:w,id:i}));remembered=new Set;shuffle(memoryPool);updateMemoryUI();document.getElementById('nextFromMemory').disabled=!0;document.getElementById('memoryButtons').classList.remove('hidden')}
-function updateMemoryUI(){const r=memoryPool.filter(i=>!remembered.has(i.id)),d=remembered.size;document.getElementById('memProgressText').textContent=uiText.step1_progress+' '+d+' / 6';document.getElementById('memRemainText').textContent=uiText.step1_remain+' '+r.length;const c=document.getElementById('memoryCard'),b=document.getElementById('memoryButtons');if(r.length===0){c.innerHTML=`<div style="padding:20px;font-size:20px;color:#2C5A7A;">${uiText.step1_allDone}</div>`;c.classList.add('finished');document.getElementById('nextFromMemory').disabled=!1;b.classList.add('hidden');document.activeElement?.blur();return}c.classList.remove('finished');b.classList.remove('hidden');const n=r[0],w=n.word;c.innerHTML=`<div class="card-img"><img src="${w.img}" alt="${w.ru}" style="max-width:180px;max-height:180px;object-fit:cover;border-radius:16px;"></div><div style="font-size:22px;font-weight:600;color:#22384B;">${w.ko}</div><div class="memory-ru" id="memoryRu">${w.ru}</div><div class="hint">${uiText.step1_hint}</div>`;c.dataset.currentId=n.id;const ru=document.getElementById('memoryRu');if(ru)ru.classList.remove('show');c.onclick=function(e){if(e.target.tagName==='BUTTON')return;const r=document.getElementById('memoryRu');if(r)r.classList.toggle('show')};document.getElementById('nextFromMemory').disabled=!0;document.activeElement?.blur()}
+function updateMemoryUI(){const r=memoryPool.filter(i=>!remembered.has(i.id)),d=remembered.size;document.getElementById('memProgressText').textContent=uiText.step1_progress+' '+d+' / 6';document.getElementById('memRemainText').textContent=uiText.step1_remain+' '+r.length;const c=document.getElementById('memoryCard'),b=document.getElementById('memoryButtons');if(r.length===0){c.innerHTML=`<div style="padding:16px;font-size:20px;color:#2C5A7A;">${uiText.step1_allDone}</div>`;c.classList.add('finished');document.getElementById('nextFromMemory').disabled=!1;b.classList.add('hidden');document.activeElement?.blur();return}c.classList.remove('finished');b.classList.remove('hidden');const n=r[0],w=n.word;c.innerHTML=`<div class="card-img"><img src="${w.img}" alt="${w.ru}" style="max-width:160px;max-height:160px;object-fit:cover;border-radius:12px;"></div><div style="font-size:22px;font-weight:600;color:#22384B;">${w.ko}</div><div class="memory-ru" id="memoryRu">${w.ru}</div><div class="hint">${uiText.step1_hint}</div>`;c.dataset.currentId=n.id;const ru=document.getElementById('memoryRu');if(ru)ru.classList.remove('show');c.onclick=function(e){if(e.target.tagName==='BUTTON')return;const r=document.getElementById('memoryRu');if(r)r.classList.toggle('show')};document.getElementById('nextFromMemory').disabled=!0;document.activeElement?.blur()}
 document.getElementById('btnRemember').addEventListener('click',function(){const c=document.getElementById('memoryCard'),id=parseInt(c.dataset.currentId);if(!isNaN(id)){remembered.add(id);updateMemoryUI()}this.blur()});
 document.getElementById('btnForget').addEventListener('click',function(){const c=document.getElementById('memoryCard'),id=parseInt(c.dataset.currentId);if(!isNaN(id)){const idx=memoryPool.findIndex(i=>i.id===id);if(idx!==-1){const[item]=memoryPool.splice(idx,1);memoryPool.push(item)}updateMemoryUI()}this.blur()});
 function resetMemory(){initMemory();goToPage(1)}
 function initSelect(){selectQueue=words.map((w,i)=>({word:w,id:i}));shuffle(selectQueue);selectAnswered=0;selectLocked=!1;document.getElementById('selectProgressText').textContent=uiText.step2_progress+' 0 / 6';document.getElementById('nextFromSelect').disabled=!0;renderSelectQuestion()}
-function renderSelectQuestion(){const c=document.getElementById('selectContainer');if(selectQueue.length===0){c.innerHTML=`<div style="padding:30px;text-align:center;font-size:24px;color:#2C5A7A;">${uiText.step2_allDone}</div>`;document.getElementById('nextFromSelect').disabled=!1;document.activeElement?.blur();return}const item=selectQueue[0],w=item.word,others=words.filter((_,i)=>i!==item.id);shuffle(others);const options=[w.ko,...others.slice(0,3).map(o=>o.ko)];shuffle(options);c.innerHTML=`<div class="select-card"><div style="font-size:24px;font-weight:600;color:#22384B;margin-bottom:10px;">${w.ru}</div><div class="select-options" id="selectOptions">${options.map((o,i)=>`<button class="option-btn" data-optidx="${i}" data-correct="${o===w.ko?'true':'false'}">${o}</button>`).join('')}</div></div>`;document.activeElement?.blur();document.querySelectorAll('#selectOptions .option-btn').forEach(b=>{b.addEventListener('click',function(){if(selectLocked)return;const isCorrect=this.dataset.correct==='true';selectLocked=!0;document.querySelectorAll('#selectOptions .option-btn').forEach(btn=>btn.disabled=!0);if(isCorrect){this.classList.add('correct');selectAnswered++;document.getElementById('selectProgressText').textContent=uiText.step2_progress+' '+selectAnswered+' / 6';selectQueue.shift();this.blur();setTimeout(()=>{selectLocked=!1;renderSelectQuestion()},500)}else{this.classList.add('wrong');document.querySelector('#selectOptions .option-btn[data-correct="true"]').classList.add('correct');const[first]=selectQueue.splice(0,1);selectQueue.push(first);this.blur();setTimeout(()=>{selectLocked=!1;renderSelectQuestion()},800)}})})}
+function renderSelectQuestion(){const c=document.getElementById('selectContainer');if(selectQueue.length===0){c.innerHTML=`<div style="padding:20px;text-align:center;font-size:24px;color:#2C5A7A;">${uiText.step2_allDone}</div>`;document.getElementById('nextFromSelect').disabled=!1;document.activeElement?.blur();return}const item=selectQueue[0],w=item.word,others=words.filter((_,i)=>i!==item.id);shuffle(others);const options=[w.ko,...others.slice(0,3).map(o=>o.ko)];shuffle(options);c.innerHTML=`<div class="select-card"><div style="font-size:24px;font-weight:600;color:#22384B;margin-bottom:8px;">${w.ru}</div><div class="select-options" id="selectOptions">${options.map((o,i)=>`<button class="option-btn" data-optidx="${i}" data-correct="${o===w.ko?'true':'false'}">${o}</button>`).join('')}</div></div>`;document.activeElement?.blur();document.querySelectorAll('#selectOptions .option-btn').forEach(b=>{b.addEventListener('click',function(){if(selectLocked)return;const isCorrect=this.dataset.correct==='true';selectLocked=!0;document.querySelectorAll('#selectOptions .option-btn').forEach(btn=>btn.disabled=!0);if(isCorrect){this.classList.add('correct');selectAnswered++;document.getElementById('selectProgressText').textContent=uiText.step2_progress+' '+selectAnswered+' / 6';selectQueue.shift();this.blur();setTimeout(()=>{selectLocked=!1;renderSelectQuestion()},500)}else{this.classList.add('wrong');document.querySelector('#selectOptions .option-btn[data-correct="true"]').classList.add('correct');const[first]=selectQueue.splice(0,1);selectQueue.push(first);this.blur();setTimeout(()=>{selectLocked=!1;renderSelectQuestion()},800)}})})}
 function resetSelect(){initSelect();goToPage(2)}
 function initGrid(){gridComplete=!1;const items=[];words.forEach((w,i)=>{items.push({text:w.ru,id:i,type:'ru'});items.push({text:w.ko,id:i,type:'ko'})});shuffle(items);selectedGrid=null;renderGrid(items);document.getElementById('gridProgressText').textContent=uiText.step3_progress+' 0 / 6';document.getElementById('nextFromGrid').disabled=!0;if(gridTimer)clearTimeout(gridTimer);gridTimer=null;document.getElementById('gridContainer').innerHTML='<div class="grid-3x4" id="gridTable"></div>';renderGrid(items)}
 function renderGrid(items){const g=document.getElementById('gridTable');if(!g)return;g.innerHTML='';items.forEach(item=>{const c=document.createElement('div');c.className='grid-cell';c.textContent=item.text;c.dataset.id=item.id;c.dataset.type=item.type;c.addEventListener('click',()=>handleGridClick(c));g.appendChild(c)})}
-function handleGridClick(el){if(el.classList.contains('matched'))return;if(gridSelectedEl&&gridSelectedEl!==el){const id1=parseInt(gridSelectedEl.dataset.id),id2=parseInt(el.dataset.id);if(id1===id2&&gridSelectedEl.dataset.type!==el.dataset.type){gridSelectedEl.classList.add('matched');el.classList.add('matched');gridSelectedEl.classList.remove('selected');el.classList.remove('selected');gridSelectedEl=null;updateGridProgress();if(document.querySelectorAll('#gridTable .grid-cell.matched').length===words.length*2){document.getElementById('nextFromGrid').disabled=!1;document.getElementById('gridContainer').innerHTML=`<div style="padding:30px;text-align:center;font-size:24px;color:#2C5A7A;">${uiText.step3_allDone}</div>`}}else{gridSelectedEl.classList.add('wrong');el.classList.add('wrong');gridSelectedEl.classList.remove('selected');if(gridTimer)clearTimeout(gridTimer);gridTimer=setTimeout(()=>{gridSelectedEl.classList.remove('wrong');el.classList.remove('wrong');gridSelectedEl=null;gridTimer=null},400)}return}if(gridSelectedEl===el){el.classList.remove('selected');gridSelectedEl=null;return}el.classList.add('selected');gridSelectedEl=el}
+function handleGridClick(el){if(el.classList.contains('matched'))return;if(gridSelectedEl&&gridSelectedEl!==el){const id1=parseInt(gridSelectedEl.dataset.id),id2=parseInt(el.dataset.id);if(id1===id2&&gridSelectedEl.dataset.type!==el.dataset.type){gridSelectedEl.classList.add('matched');el.classList.add('matched');gridSelectedEl.classList.remove('selected');el.classList.remove('selected');gridSelectedEl=null;updateGridProgress();if(document.querySelectorAll('#gridTable .grid-cell.matched').length===words.length*2){document.getElementById('nextFromGrid').disabled=!1;document.getElementById('gridContainer').innerHTML=`<div style="padding:20px;text-align:center;font-size:24px;color:#2C5A7A;">${uiText.step3_allDone}</div>`}}else{gridSelectedEl.classList.add('wrong');el.classList.add('wrong');gridSelectedEl.classList.remove('selected');if(gridTimer)clearTimeout(gridTimer);gridTimer=setTimeout(()=>{gridSelectedEl.classList.remove('wrong');el.classList.remove('wrong');gridSelectedEl=null;gridTimer=null},400)}return}if(gridSelectedEl===el){el.classList.remove('selected');gridSelectedEl=null;return}el.classList.add('selected');gridSelectedEl=el}
 function updateGridProgress(){const m=document.querySelectorAll('#gridTable .grid-cell.matched').length;document.getElementById('gridProgressText').textContent=uiText.step3_progress+' '+m/2+' / 6'}
 function resetGrid(){initGrid();goToPage(3)}
 function initTest(){testQueue=words.map((w,i)=>({word:w,id:i}));shuffle(testQueue);testAnswered=0;testLocked=!1;document.getElementById('testProgressText').textContent=uiText.step4_progress+' 0 / 6';document.getElementById('nextFromTest').disabled=!0;renderTestQuestion()}
-function renderTestQuestion(){const c=document.getElementById('testContainer');if(testQueue.length===0){const lines=uiText.step4_allDone.split('\n');c.innerHTML=`<div style="padding:30px;text-align:center;font-size:20px;color:#2C5A7A;"><div>${lines[0]}</div><div>${lines[1]||''}</div></div>`;document.getElementById('nextFromTest').disabled=!1;document.activeElement?.blur();return}const item=testQueue[0],w=item.word,others=words.filter((_,i)=>i!==item.id);shuffle(others);const options=[w.ru,...others.slice(0,3).map(o=>o.ru)];shuffle(options);c.innerHTML=`<div class="test-card"><div class="card-img"><img src="${w.img}" alt="${w.ru}" style="max-width:150px;max-height:150px;object-fit:cover;border-radius:16px;"></div><div style="font-size:24px;font-weight:600;color:#22384B;margin-top:6px;">${w.ko}</div><div class="test-options" id="testOptions">${options.map((o,i)=>`<button class="option-btn" data-optidx="${i}" data-correct="${o===w.ru?'true':'false'}">${o}</button>`).join('')}</div></div>`;document.activeElement?.blur();document.querySelectorAll('#testOptions .option-btn').forEach(b=>{b.addEventListener('click',function(){if(testLocked)return;const isCorrect=this.dataset.correct==='true';testLocked=!0;document.querySelectorAll('#testOptions .option-btn').forEach(btn=>btn.disabled=!0);if(isCorrect){this.classList.add('correct');testAnswered++;document.getElementById('testProgressText').textContent=uiText.step4_progress+' '+testAnswered+' / 6';testQueue.shift();this.blur();setTimeout(()=>{testLocked=!1;renderTestQuestion()},500)}else{this.classList.add('wrong');document.querySelector('#testOptions .option-btn[data-correct="true"]').classList.add('correct');const[first]=testQueue.splice(0,1);testQueue.push(first);this.blur();setTimeout(()=>{testLocked=!1;renderTestQuestion()},800)}})})}
+function renderTestQuestion(){const c=document.getElementById('testContainer');if(testQueue.length===0){const lines=uiText.step4_allDone.split('\n');c.innerHTML=`<div style="padding:20px;text-align:center;font-size:20px;color:#2C5A7A;"><div>${lines[0]}</div><div>${lines[1]||''}</div></div>`;document.getElementById('nextFromTest').disabled=!1;document.activeElement?.blur();return}const item=testQueue[0],w=item.word,others=words.filter((_,i)=>i!==item.id);shuffle(others);const options=[w.ru,...others.slice(0,3).map(o=>o.ru)];shuffle(options);c.innerHTML=`<div class="test-card"><div class="card-img"><img src="${w.img}" alt="${w.ru}" style="max-width:140px;max-height:140px;object-fit:cover;border-radius:12px;"></div><div style="font-size:24px;font-weight:600;color:#22384B;margin-top:4px;">${w.ko}</div><div class="test-options" id="testOptions">${options.map((o,i)=>`<button class="option-btn" data-optidx="${i}" data-correct="${o===w.ru?'true':'false'}">${o}</button>`).join('')}</div></div>`;document.activeElement?.blur();document.querySelectorAll('#testOptions .option-btn').forEach(b=>{b.addEventListener('click',function(){if(testLocked)return;const isCorrect=this.dataset.correct==='true';testLocked=!0;document.querySelectorAll('#testOptions .option-btn').forEach(btn=>btn.disabled=!0);if(isCorrect){this.classList.add('correct');testAnswered++;document.getElementById('testProgressText').textContent=uiText.step4_progress+' '+testAnswered+' / 6';testQueue.shift();this.blur();setTimeout(()=>{testLocked=!1;renderTestQuestion()},500)}else{this.classList.add('wrong');document.querySelector('#testOptions .option-btn[data-correct="true"]').classList.add('correct');const[first]=testQueue.splice(0,1);testQueue.push(first);this.blur();setTimeout(()=>{testLocked=!1;renderTestQuestion()},800)}})})}
 function resetTest(){initTest();goToPage(4)}
 function goToPage(n){if(n<0||n>=totalPages)return;if(n>currentPage){const b=document.querySelector(`.page[data-page="${currentPage}"] .nav-bar .btn:last-child`);if(b&&b.disabled)return}document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));document.querySelector(`.page[data-page="${n}"]`).classList.add('active');currentPage=n;updateDots();window.scrollTo({top:0,behavior:'smooth'});document.activeElement?.blur()}
 function updateDots(){document.querySelectorAll('.step-dot').forEach((d,i)=>{d.classList.remove('active','done');if(i===currentPage)d.classList.add('active');else if(i<currentPage)d.classList.add('done')})}
