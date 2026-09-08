@@ -65,12 +65,12 @@
             display: block;
             background: #FFFFFF;
             border: 2px solid #D0D9E0;
-            border-radius: 24px;
-            padding: 12px 12px 10px;  /* чуть меньше padding, чтобы картинка была больше */
+            border-radius: 0;           /* Убрали скругление углов */
+            padding: 0;                 /* Убрали внутренние отступы — картинка займёт всю ширину */
             text-decoration: none;
             color: inherit;
             transition: box-shadow 0.25s, transform 0.15s;
-            /* убираем max-width и margin, чтобы карточка занимала всю ширину колонки */
+            overflow: hidden;           /* Чтобы содержимое не вылезало за рамку */
         }
         .lesson-card:hover {
             box-shadow: 0 8px 24px rgba(34, 56, 75, 0.12);
@@ -84,41 +84,34 @@
             width: 100%;
             height: auto;
             display: block;
-            /* border-radius убран */
+            /* border-radius убран — углы прямые */
         }
 
         .lesson-title {
-            margin-top: 8px;  /* чуть меньше отступ сверху */
+            padding: 8px 10px 10px;    /* Небольшие отступы для текста, чтобы не прилипал к краям */
             font-size: 20px;
             font-weight: 600;
             color: #22384B;
             letter-spacing: 0.2px;
+            background: #FFFFFF;        /* Белый фон, чтобы перекрыть возможный просвет */
+            text-align: center;
         }
 
         @media (max-width: 500px) {
             .container { padding: 20px 16px; }
             h1 { font-size: 24px; }
-            .lesson-title { font-size: 18px; }  /* оставлено как было */
-            /* на маленьких экранах можно чуть уменьшить gap и padding карточек */
+            .lesson-title { font-size: 18px; }
             .lessons-grid {
                 gap: 10px;
             }
-            .lesson-card {
-                padding: 10px 10px 8px;
-            }
         }
-        /* Для очень узких экранов (менее 350px) можно оставить две колонки,
-           но если будет слишком тесно – можно переключить на одну, 
-           однако по требованию оставляем две везде */
         @media (max-width: 350px) {
             .lessons-grid {
                 gap: 8px;
             }
-            .lesson-card {
-                padding: 8px;
-            }
             .lesson-title {
-                font-size: 16px; /* чуть меньше, но можно и оставить 18 */
+                font-size: 16px;
+                padding: 6px 8px 8px;
             }
         }
     </style>
@@ -135,9 +128,8 @@
         <h1>러시아어 어휘 배우기</h1>
         <div class="sub">클릭해서 수업을 시작하세요</div>
 
-        <!-- Сетка с двумя карточками -->
         <div class="lessons-grid">
-            <!-- Первый урок (Книги) -->
+            <!-- Книги -->
             <a href="lesson-books.html" class="lesson-card">
                 <img 
                     src="https://i.ibb.co/F4KBp99k/2026-08-18-22-56-50.png" 
@@ -147,7 +139,7 @@
                 <div class="lesson-title">📖 책 관련 어휘</div>
             </a>
 
-            <!-- Второй урок (Телефон) -->
+            <!-- Телефон -->
             <a href="lesson-phone.html" class="lesson-card">
                 <img 
                     src="https://i.ibb.co/pBBmsPhZ/image.png" 
