@@ -57,7 +57,7 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 .option-btn.wrong{border-color:#D95C5C!important;background:#FFEAEA!important;animation:shake .3s ease-in-out}
 .option-btn:disabled{cursor:default;opacity:.8}
 .grid-3x4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0 16px}
-.grid-cell{background:#fff;border:2px solid #D0D9E0;border-radius:12px;padding:12px 4px;text-align:center;font-size:16px;cursor:pointer;transition:.15s;user-select:none;min-height:50px;display:flex;align-items:center;justify-content:center;word-break:break-word;color:#22384B}
+.grid-cell{background:#fff;border:2px solid #D0D9E0;border-radius:12px;padding:12px 4px;text-align:center;font-size:16px;cursor:pointer;transition:.15s;user-select:none;min-height:50px;display:flex;align-items:center;justify-content:center;word-break:keep-all;overflow-wrap:break-word;color:#22384B}
 .grid-cell.selected{border-color:#2C5A7A;background:#F5F8FA;box-shadow:0 0 0 3px rgba(44,90,122,.2)}
 .grid-cell.matched{border-color:#6A8CA8;background:#E8EDF2;pointer-events:none;opacity:.7}
 .grid-cell.wrong{border-color:#D95C5C!important;background:#FFEAEA!important;animation:shake .3s ease-in-out}
@@ -159,7 +159,7 @@ h1{font-size:22px;font-weight:600;color:#22384B;text-align:center;margin-bottom:
 </div>
 </div>
 <script>
-const uiText={title:"📱 핸드폰 관련 어휘",subtitle:"수업 제공: 핑크문 러시아어",step0_title:"한 번 외워 보세요!",step0_rememberBtn:"✅ 기억했어요!",step0_rememberDone:"🎉 완료!",step1_progress:"외움:",step1_remain:"남음:",step1_allDone:"🎉 모든 단어를 외웠어요!",step1_hint:"👆 눌러서 번역 보기",step1_btnForget:"❌ 기억 안 나요",step1_btnRemember:"✅ 기억나요",step2_title:"한국어 번역을 선택하세요",step2_progress:"답변 완료:",step2_allDone:"🎉 좋아요!",step3_title:"그리드에서 짝을 찾으세요",step3_progress:"찾은 짝:",step3_allDone:"🎉 짝을 모두 찾았어요!",step4_title:"러시아어 번역을 선택하세요",step4_progress:"답변 완료:",step4_allDone:"🎉 훌륭해요!\n모든 문제를 맞췄어요.",nav_back:"⬅️ 이전",nav_repeat:"🔄 다시 하기",nav_next:"다음 ➡️",nav_finish:"🎉 완료"};
+const uiText={title:"📱 핸드폰 러시아어 어휘",subtitle:"수업 제공: 핑크문 러시아어",step0_title:"한 번 외워 보세요!",step0_rememberBtn:"✅ 기억했어요!",step0_rememberDone:"🎉 완료!",step1_progress:"외움:",step1_remain:"남음:",step1_allDone:"🎉 모든 단어를 외웠어요!",step1_hint:"👆 눌러서 번역 보기",step1_btnForget:"❌ 기억 안 나요",step1_btnRemember:"✅ 기억나요",step2_title:"한국어 번역을 선택하세요",step2_progress:"답변 완료:",step2_allDone:"🎉 좋아요!",step3_title:"그리드에서 짝을 찾으세요",step3_progress:"찾은 짝:",step3_allDone:"🎉 짝을 모두 찾았어요!",step4_title:"러시아어 번역을 선택하세요",step4_progress:"답변 완료:",step4_allDone:"🎉 훌륭해요!\n모든 문제를 맞췄어요.",nav_back:"⬅️ 이전",nav_repeat:"🔄 다시 하기",nav_next:"다음 ➡️",nav_finish:"🎉 완료"};
 const words=[
 {ru:"Включи́ть телефо́н",ko:"핸드폰을 켜다",img:"https://i.ibb.co/WvrLwHj4/IMG-7093.jpg"},
 {ru:"Вы́ключить телефо́н",ko:"핸드폰을 끄다",img:"https://i.ibb.co/jjp0VwY/IMG-7094.jpg"},
